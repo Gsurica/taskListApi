@@ -1,8 +1,8 @@
 module.exports = {
   dialect: 'mysql',
   host: 'localhost',
-  username: 'root',
-  password: '161149M@e',
+  username: '',
+  password: '',
   database: 'tasklist',
   define: {
     timestamps: false,
