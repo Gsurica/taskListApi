@@ -5,7 +5,7 @@ class userController {
   async store (req, res) {
     const schema = Yup.object().shape({
       name: Yup.string().required(),
-      email: Yup.string().email().require(),
+      email: Yup.string().required().email(),
       password: Yup.string().required().min(6)
     })
     if (!(await schema.isValid(req.body))) return res.status(400).json({ error: "Falha na validação!" })
@@ -22,7 +22,6 @@ class userController {
     })
   }
   async update (req, res) {
-
     const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
